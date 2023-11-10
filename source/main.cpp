@@ -1,4 +1,4 @@
-#include "list.h"
+#include "list_dump.h"
 
 int main()
 {
@@ -10,7 +10,7 @@ int main()
 
     error |= OpenFile(DUMP_FILE_NAME, &dump_file, "w");
 
-    LIST_CTOR(&list, 16)
+    LIST_CTOR(&list, 8)
 
     LIST_TXT_DUMP(&list, dump_file)
 
@@ -25,6 +25,8 @@ int main()
 
     ListErase(&list, 1, &error);
     LIST_TXT_DUMP(&list, dump_file)
+
+    CreatePicture(&list, &error);
 
     return 0;
 }

@@ -15,8 +15,12 @@ const elem_t POISON_VALUE = -666;
 
 const int    LIST_INVALID_INDEX = -1;
 
-static const char*  ERROR_FILE_NAME = "error.log";
-static const char*  DUMP_FILE_NAME  = "list.dmp";
+const char* const ERROR_FILE_NAME   = "error.log";
+const char* const DUMP_FILE_NAME    = "list.dmp";
+const char* const DOT_FILE_NAME     = "graphviz_list.dot";
+const char* const EXTENSION         = "png";
+const char* const FILE_LOCATION     = "C:\\Users\\OlegA\\Desktop\\MY_LIST\\list.png";
+const char* const DOT_FILE_LOCATION = "C:\\Users\\OlegA\\Desktop\\MY_LIST\\graphviz_list.dot";
 
 const size_t LEN_OF_LINE = 128;
 

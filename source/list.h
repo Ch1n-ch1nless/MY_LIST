@@ -5,9 +5,15 @@
 
 #define LIST_CTOR(list, capacity) ListCtor(list, #list, __FILE__, __LINE__, capacity);
 
-#define LIST_TXT_DUMP(list, dump_file) ListTextDump(list, dump_file, #list, __FILE__, __LINE__, __FUNCTION__);
-
 #define PRINT_LIST_ERROR(list, error) PrintListError(list, error, __FILE__, __FUNCTION__, __LINE__);
+
+#define HEAD list->next[0]
+
+#define TAIL list->prev[0]
+
+#define FREE list->free
+
+#define number_of_free_elements list->capacity - list->size
 
 struct List
 {
@@ -37,9 +43,6 @@ int     ListPushBack(List* list, elem_t element, error_t* error);
 int     ListErase(List* list, int index, error_t* error);
 int     ListPopFront(List* list, error_t* error);
 int     ListPopBack(List* list, error_t* error);
-
-void    ListTextDump(List* list, FILE* output_fp, const char* name, const char* file,
-                                                  const int line,   const char* function);
 
 error_t ListVerify(List* list);
 
